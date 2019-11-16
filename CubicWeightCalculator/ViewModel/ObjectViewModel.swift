@@ -8,20 +8,25 @@
 
 import Foundation
 
+protocol DataEndPoint {
+    func getData(completion: @escaping ([Object]) -> Void)
+}
+
 class ObjectViewModel {
-    var objectNetworking = ObjectNetworking()
+    let objectDataEndPoint: DataEndPoint
     var sum: Double
     let conversionFactor: Double = 250
     
-    init(){
+    init(withDataEndPoint: DataEndPoint){
         sum = 0.0
+        objectDataEndPoint = withDataEndPoint
     }
 }
 
 extension ObjectViewModel {
     func getAvgCubicWeight(completion: @escaping (String) -> Void) {
         
-        objectNetworking.getData { (objects) in
+        objectDataEndPoint.getData { (objects) in
             
             DispatchQueue.main.async { [weak self]  in
                 if let weakSelf = self {

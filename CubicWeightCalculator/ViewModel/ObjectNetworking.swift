@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ObjectNetworking {
+class ObjectNetworking: DataEndPoint {
     let baseURL = "http://wp8m3he1wt.s3-website-ap-southeast-2.amazonaws.com"
     var pageURL = "/api/products/1"
     var allObjectData = [Object]()

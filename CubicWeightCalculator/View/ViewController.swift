@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var avgCubicWeightValLbl: UILabel!
     
-    var objectViewModel = ObjectViewModel()
+    var objectViewModel = ObjectViewModel(withDataEndPoint: ObjectNetworking())
 
     override func viewDidLoad() {
         super.viewDidLoad()
