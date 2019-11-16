@@ -19,10 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="Mnu-gZ-Loj">
-                                <rect key="frame" x="101.5" y="394.5" width="211.5" height="107.5"/>
+                                <rect key="frame" x="101.5" y="294.5" width="211.5" height="107.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Cubic Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLp-xJ-W3o">
                                         <rect key="frame" x="0.0" y="0.0" width="211.5" height="26.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="avgCubicWeightLbl"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -35,15 +36,22 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KOu-sC-Zq7">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="KOu-sC-Zq7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HEc-1j-ZIZ"/>
+                            <constraint firstItem="KOu-sC-Zq7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LdZ-OZ-8gh"/>
                             <constraint firstItem="Mnu-gZ-Loj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fcx-eI-8Es"/>
-                            <constraint firstItem="Mnu-gZ-Loj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kfH-Jf-xfK"/>
+                            <constraint firstItem="Mnu-gZ-Loj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="kfH-Jf-xfK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityInd" destination="KOu-sC-Zq7" id="QnG-nw-3FX"/>
                         <outlet property="avgCubicWeightValLbl" destination="Vyk-4s-Oar" id="7eR-EX-6eV"/>
                     </connections>
                 </viewController>

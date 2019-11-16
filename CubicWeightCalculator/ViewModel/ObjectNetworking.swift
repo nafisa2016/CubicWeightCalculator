@@ -47,7 +47,6 @@ class ObjectNetworking: DataEndPoint {
                             Object.category == weakSelf.categoryFilterStr
                         })
                         
-                        
                         if let next = responseData.next {
                             weakSelf.pageURL = next
                             weakSelf.getData(completion: completion)

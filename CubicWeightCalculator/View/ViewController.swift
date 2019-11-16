@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var activityInd: UIActivityIndicatorView!
     @IBOutlet weak var avgCubicWeightValLbl: UILabel!
     
     var objectViewModel = ObjectViewModel(withDataEndPoint: ObjectNetworking())
@@ -17,7 +18,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.activityInd.startAnimating()
+        
         objectViewModel.getAvgCubicWeight{ (avgCubicWeight) in
+            self.activityInd.stopAnimating()
             self.avgCubicWeightValLbl.text = avgCubicWeight + " Kg"
         }
     }
