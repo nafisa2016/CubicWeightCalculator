@@ -9,12 +9,11 @@
 import Foundation
 
 class ObjectViewModel {
-    var objects: [Object]
     var objectNetworking = ObjectNetworking()
     var sum: Double
+    let conversionFactor: Double = 250
     
     init(){
-        objects = []
         sum = 0.0
     }
 }
@@ -22,41 +21,41 @@ class ObjectViewModel {
 extension ObjectViewModel {
     func getAvgCubicWeight(completion: @escaping (String) -> Void) {
         
-        objectNetworking.getData { (object) in
+        objectNetworking.getData { (objects) in
+            
             DispatchQueue.main.async { [weak self]  in
                 if let weakSelf = self {
-                    weakSelf.objects = object
-                    
-                    weakSelf.objects.forEach({(object) in
+                   
+                    objects.forEach({(object) in
                         if let width = object.size?.width, let height = object.size?.height, let length = object.size?.length {
                             let cubicWeight = weakSelf.getCubicWeight(width: width, height: height, length: length)
-                            let _ =  weakSelf.getSum(cubicWeight: cubicWeight)
+                            let _ =  weakSelf.updateSum(cubicWeight: cubicWeight)
                         }
                     })
                     
-                    let avgCubicWeight = weakSelf.getAverage(sum: weakSelf.sum, count: weakSelf.objects.count)
+                    let avgCubicWeight = weakSelf.getAverage(sum: weakSelf.sum, count: objects.count)
                     completion(weakSelf.formatAvgCubicWeight(weight: avgCubicWeight))
                 }
             }
         }
     }
     
-    func getCubicWeight(width: Double, height: Double, length: Double) -> Double {
-        return (width * height * length * 250) / (100 * 100 * 100)
+    private func getCubicWeight(width: Double, height: Double, length: Double) -> Double {
+        return (width * height * length * conversionFactor) / (100 * 100 * 100)
     }
     
-    func getSum(cubicWeight: Double) -> Double {
+    private func updateSum(cubicWeight: Double) -> Double {
         sum += cubicWeight
         return sum
     }
     
-    func getAverage(sum: Double, count: Int) -> Double {
+    private func getAverage(sum: Double, count: Int) -> Double {
         guard count > 0 else { return 0 }
         
         return sum / Double(count)
     }
     
-    func formatAvgCubicWeight(weight: Double) -> String {
+    private func formatAvgCubicWeight(weight: Double) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.maximumFractionDigits = 4

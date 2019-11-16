@@ -9,13 +9,15 @@
 import Foundation
 
 struct Size: Decodable {
-    var width: Double
-    var height: Double
-    var length: Double
+    var width: Double?
+    var height: Double?
+    var length: Double?
 }
 
 struct Object: Decodable {
     var category: String
+    var title: String
+    var weight: Double?
     var size: Size?
 }
 

@@ -11,11 +11,11 @@ import Foundation
 class ObjectNetworking {
     let baseURL = "http://wp8m3he1wt.s3-website-ap-southeast-2.amazonaws.com"
     var pageURL = "/api/products/1"
+    var allObjectData = [Object]()
+    private let categoryFilterStr = "Air Conditioners"
     
     func getData(completion: @escaping ([Object]) -> Void) {
         let endPoint = baseURL + pageURL
-        print(endPoint)
-        var allObjectData = [Object]()
         
         guard let url = URL(string: endPoint) else {
             print("can't create URL")
@@ -28,7 +28,6 @@ class ObjectNetworking {
         let task = session.dataTask(with: urlRequest , completionHandler: {[weak self]  (data, response, error) in
             
             if let weakSelf = self {
-                
                 guard let _:URLResponse = response  , error == nil else {
                     return
                 }
@@ -40,27 +39,25 @@ class ObjectNetworking {
                 
                 //response status is 200
                 let response = response as? HTTPURLResponse
-                print(response)
-                if response?.statusCode == 200{
-                    
+                
+                if response?.statusCode == 200 {
                     if let responseData = weakSelf.addData(jsonData: responseData) {
-
-                        allObjectData +=  responseData.objects.filter({ (Object) in
-                            Object.category == "Air Conditioners"
+                        
+                        weakSelf.allObjectData +=  responseData.objects.filter({ (Object) in
+                            Object.category == weakSelf.categoryFilterStr
                         })
                         
+                        
                         if let next = responseData.next {
-                            print(next)
                             weakSelf.pageURL = next
                             weakSelf.getData(completion: completion)
                         } else {
-                            completion(allObjectData)
+                            completion(weakSelf.allObjectData)
                         }
                     }
                 }
                 
             } //weak self
-            
         })
         
         task.resume()
