@@ -12,11 +12,14 @@
 		78511CA1237FAED600402104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78511C9F237FAED600402104 /* Main.storyboard */; };
 		78511CA3237FAEDC00402104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78511CA2237FAEDC00402104 /* Assets.xcassets */; };
 		78511CA6237FAEDC00402104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78511CA4237FAEDC00402104 /* LaunchScreen.storyboard */; };
-		78511CB1237FAEDD00402104 /* CubicWeightCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78511CB0237FAEDD00402104 /* CubicWeightCalculatorTests.swift */; };
+		78511CB1237FAEDD00402104 /* CubicWeightCalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78511CB0237FAEDD00402104 /* CubicWeightCalculatorViewModelTests.swift */; };
 		78511CBC237FAEDD00402104 /* CubicWeightCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78511CBB237FAEDD00402104 /* CubicWeightCalculatorUITests.swift */; };
 		78511CCA237FAF4000402104 /* ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78511CC9237FAF4000402104 /* ObjectModel.swift */; };
 		78511CCE237FB63200402104 /* ObjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78511CCD237FB63200402104 /* ObjectViewModel.swift */; };
 		78511CD0237FB68E00402104 /* ObjectNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78511CCF237FB68E00402104 /* ObjectNetworking.swift */; };
+		78511CD5237FE8E800402104 /* CubicWeightCalculatorViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78511CD4237FE8E800402104 /* CubicWeightCalculatorViewTests.swift */; };
+		78511CD7237FEB2500402104 /* CubicWeightCalculatorNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78511CD6237FEB2500402104 /* CubicWeightCalculatorNetworkingTests.swift */; };
+		78511CD9237FEC2F00402104 /* CubicWeightCalculatorModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78511CD8237FEC2F00402104 /* CubicWeightCalculatorModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +48,7 @@
 		78511CA5237FAEDC00402104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78511CA7237FAEDD00402104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78511CAC237FAEDD00402104 /* CubicWeightCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CubicWeightCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		78511CB0237FAEDD00402104 /* CubicWeightCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicWeightCalculatorTests.swift; sourceTree = "<group>"; };
+		78511CB0237FAEDD00402104 /* CubicWeightCalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicWeightCalculatorViewModelTests.swift; sourceTree = "<group>"; };
 		78511CB2237FAEDD00402104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78511CB7237FAEDD00402104 /* CubicWeightCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CubicWeightCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78511CBB237FAEDD00402104 /* CubicWeightCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicWeightCalculatorUITests.swift; sourceTree = "<group>"; };
@@ -53,6 +56,9 @@
 		78511CC9237FAF4000402104 /* ObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModel.swift; sourceTree = "<group>"; };
 		78511CCD237FB63200402104 /* ObjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewModel.swift; sourceTree = "<group>"; };
 		78511CCF237FB68E00402104 /* ObjectNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectNetworking.swift; sourceTree = "<group>"; };
+		78511CD4237FE8E800402104 /* CubicWeightCalculatorViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicWeightCalculatorViewTests.swift; sourceTree = "<group>"; };
+		78511CD6237FEB2500402104 /* CubicWeightCalculatorNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicWeightCalculatorNetworkingTests.swift; sourceTree = "<group>"; };
+		78511CD8237FEC2F00402104 /* CubicWeightCalculatorModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicWeightCalculatorModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +124,11 @@
 		78511CAF237FAEDD00402104 /* CubicWeightCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				78511CB0237FAEDD00402104 /* CubicWeightCalculatorTests.swift */,
+				78511CB0237FAEDD00402104 /* CubicWeightCalculatorViewModelTests.swift */,
 				78511CB2237FAEDD00402104 /* Info.plist */,
+				78511CD4237FE8E800402104 /* CubicWeightCalculatorViewTests.swift */,
+				78511CD6237FEB2500402104 /* CubicWeightCalculatorNetworkingTests.swift */,
+				78511CD8237FEC2F00402104 /* CubicWeightCalculatorModelTests.swift */,
 			);
 			path = CubicWeightCalculatorTests;
 			sourceTree = "<group>";
@@ -301,7 +310,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78511CB1237FAEDD00402104 /* CubicWeightCalculatorTests.swift in Sources */,
+				78511CD7237FEB2500402104 /* CubicWeightCalculatorNetworkingTests.swift in Sources */,
+				78511CD5237FE8E800402104 /* CubicWeightCalculatorViewTests.swift in Sources */,
+				78511CB1237FAEDD00402104 /* CubicWeightCalculatorViewModelTests.swift in Sources */,
+				78511CD9237FEC2F00402104 /* CubicWeightCalculatorModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

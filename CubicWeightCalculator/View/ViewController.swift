@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         objectViewModel.getAvgCubicWeight{ (avgCubicWeight) in
-            self.avgCubicWeightValLbl.text = avgCubicWeight
+            self.avgCubicWeightValLbl.text = avgCubicWeight + " Kg"
         }
     }
 }

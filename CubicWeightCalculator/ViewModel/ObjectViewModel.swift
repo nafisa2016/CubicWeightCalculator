@@ -40,22 +40,22 @@ extension ObjectViewModel {
         }
     }
     
-    private func getCubicWeight(width: Double, height: Double, length: Double) -> Double {
+    func getCubicWeight(width: Double, height: Double, length: Double) -> Double {
         return (width * height * length * conversionFactor) / (100 * 100 * 100)
     }
     
-    private func updateSum(cubicWeight: Double) -> Double {
+    func updateSum(cubicWeight: Double) -> Double {
         sum += cubicWeight
         return sum
     }
     
-    private func getAverage(sum: Double, count: Int) -> Double {
+    func getAverage(sum: Double, count: Int) -> Double {
         guard count > 0 else { return 0 }
         
         return sum / Double(count)
     }
     
-    private func formatAvgCubicWeight(weight: Double) -> String {
+    func formatAvgCubicWeight(weight: Double) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.maximumFractionDigits = 4
